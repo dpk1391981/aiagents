@@ -1,9 +1,9 @@
-# Gen AI Application - Proof of Concept (POC)
+# Gen AI App (Multi AI Agents) - Proof of Concept (POC)
 
 ## Overview
-This project is a Gen AI-powered application that integrates multiple AI agents to perform various tasks. The application consists of three key AI agents:
+This project is a Gen AI application that integrates multiple AI agents to perform various tasks. The application consists of three key AI agents:
 
-1. **PDF AI Agent** - Uploads a PDF and generates AI-powered answers based on its content.
+1. **PDF AI Agent** - Uploads a PDF and generates AI answers based on its content.
 2. **SQL Query Agent** - Allows querying a database using natural language with an SQL tool.
 3. **Wikipedia Agent** - Fetches relevant information from Wikipedia using AI.
 

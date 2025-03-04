@@ -100,25 +100,33 @@ def chat_with_ai(message_history, question, api_key_type, agents):
         try:
             workflow = StateGraph(GraphState)
             workflow.add_node("sql_agent", sql_agent)
+            workflow.add_node("retrieve", retrieve)
+            workflow.add_node("wiki_search", wiki_search)
             
-            if agents == "RAG-PDFs":
-                workflow.add_node("retrieve", retrieve)
-            elif agents == "Wikipedia":
-                workflow.add_node("wiki_search", wiki_search)
+            # if agents == "RAG-PDFs":
+            #     workflow.add_node("retrieve", retrieve)
+            # elif agents == "Wikipedia":
+            #     workflow.add_node("wiki_search", wiki_search)
 
             # Define routing
-            routeNode = {"sql_agent": "sql_agent"}
-            if agents == "RAG-PDFs":
-                routeNode["vectorstore"] = "retrieve"
-            elif agents == "Wikipedia":
-                routeNode["wiki_search"] = "wiki_search"
+            routeNode = {"sql_agent": "sql_agent" , "vectorstore": "retrieve", "wiki_search": "wiki_search"}
+            # routeNode["vectorstore"] = "retrieve"
+            # routeNode["wiki_search"] = "wiki_search"
+            
+            # if agents == "RAG-PDFs":
+            #     routeNode["vectorstore"] = "retrieve"
+            # elif agents == "Wikipedia":
+            #     routeNode["wiki_search"] = "wiki_search"
 
             workflow.add_conditional_edges(START, route_question, routeNode)
             workflow.add_edge("sql_agent", END)
-            if agents == "RAG-PDFs":
-                workflow.add_edge("retrieve", END)
-            elif agents == "Wikipedia":
-                workflow.add_edge("wiki_search", END)
+            workflow.add_edge("retrieve", END)
+            workflow.add_edge("wiki_search", END)
+            
+            # if agents == "RAG-PDFs":
+            #     workflow.add_edge("retrieve", END)
+            # elif agents == "Wikipedia":
+            #     workflow.add_edge("wiki_search", END)
 
             app = workflow.compile()
         except Exception as e:
