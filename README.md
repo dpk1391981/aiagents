@@ -28,11 +28,11 @@ Follow these steps to set up and run the application locally:
 ### Steps to Install and Run
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/dpk1391981/gradio_clove_prm
+   git clone https://github.com/dpk1391981/aiagents
    ```
 2. **Navigate to the Project Directory**
    ```bash
-   cd gradio_clove_prm
+   cd aiagents
    ```
 3. **Create a Virtual Environment**
    - **For Linux/macOS:**
