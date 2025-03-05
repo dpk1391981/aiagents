@@ -18,3 +18,5 @@ gradio
 langgraph
 faiss-cpu
 langchain_groq
+graphviz
+mysql-connector-python
