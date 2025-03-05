@@ -111,7 +111,7 @@ def chat_with_ai(message_history, question, api_key_type, agents):
                 route_question,
                 {
                     "sql_agent": "sql_agent",
-                    "vectorstore": "retireve"
+                    "vectorstore": "retireve",
                     "wiki_search":"wiki_search"
                 }
             )
