@@ -59,13 +59,23 @@ Follow these steps to set up and run the application locally:
      ```bash
      database/at_clothes.sql
      ```
-6. **Run the Application**
+6. **Set Up Environment Variables**
+   - Create a `.env` file and add the following (replace placeholders with actual values):
+     ```ini
+     HF_TOKEN=<your_huggingface_token>
+     GROQ_API_KEY=<your_groq_api_key>
+     ASTRA_DB_ID=<your_astra_db_id>
+     OPENAI_API_KEY=<your_openai_api_key>
+     MYSQL_HOST="localhost"
+     MYSQL_USER="your_mysql_user"
+     MYSQL_PASS="your_mysql_password"
+     MYSQL_DB="at_clothes"
+     ASTRA_DB_ID_MULTI_AGENT=<your_astra_db_id_multi_agent>
+     ASTRA_DB_APPLICATION_TOKEN=<your_astra_db_application_token>
+     ASTRA_KEYSPACE="default_keyspace"
+     ASTRA_TBL="multi_agents_tbl"
+     ```
+7. **Run the Application**
    ```bash
    python app.py
    ```
-
-## Usage
-Once the application is running, access the UI via your browser. The UI (built using Gradio) allows you to:
-- Upload PDFs and get AI-generated responses.
-- Run SQL queries on your database using AI-powered SQL tools.
-- Search Wikipedia and retrieve AI-curated information.
