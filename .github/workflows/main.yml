@@ -16,6 +16,11 @@ jobs:
           fetch-depth: 0  # Fetch full history for rebase
           lfs: true  # Enable Git LFS if needed
 
+      - name: Configure Git
+        run: |
+          git config --global user.email "dpk1391981@gmail.com"
+          git config --global user.name "dpk1391981"
+
       - name: Pull latest changes from Hugging Face
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
