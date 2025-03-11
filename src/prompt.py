@@ -51,3 +51,7 @@ If the question is about **treatment**, return **ALL** these tables:
 
 No pre-amble.
 """
+
+route_system = """
+You are an expert routing agent. A user sends an query and that query should go to the vector store. The vectorstore contains documents related to agents , prompt engineering, and adversarial attact. Use the vectorstore for question on these topics. do not go to wikipedia use only vectorstore if vector store does not know any data then redirect to wikipedia.
+"""
